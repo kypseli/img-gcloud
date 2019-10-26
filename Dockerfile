@@ -6,5 +6,6 @@ USER root
 RUN apk add python
 # copy google-cloud-sdk to img image
 COPY --from=gcloud /builder/google-cloud-sdk /home/user/google-cloud-sdk
+ENV PATH "$PATH:/home/user/google-cloud-sdk/bin/"
 
 USER user
